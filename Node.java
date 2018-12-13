@@ -3,6 +3,12 @@ public class Node {
   Node next, prev;
   Integer data;
 
+  public Node(Node nextNode, Node prevNode, Integer dataInteger) {
+    next = nextNode;
+    prev = prevNode;
+    data = dataInteger;
+  }
+
   public Node next() {
 
   }
@@ -22,6 +28,6 @@ public class Node {
   public String toString() {
 
   }
-  
+
 
 }
