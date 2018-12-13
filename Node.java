@@ -10,11 +10,11 @@ public class Node {
   }
 
   public Node next() {
-
+    return next;
   }
 
   public Node prev() {
-
+    return prev;
   }
 
   public void setNext(Node other) {
