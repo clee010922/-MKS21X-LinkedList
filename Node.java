@@ -18,15 +18,15 @@ public class Node {
   }
 
   public void setNext(Node other) {
-
+    next = other;
   }
 
   public void setPrev(Node other) {
-
+    prev = other;
   }
 
   public String toString() {
-
+    return "" + data;
   }
 
 
