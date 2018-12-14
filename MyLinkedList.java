@@ -23,6 +23,12 @@ public class MyLinkedList{
   }
 
   public String toString() {
+    String result = "[ ";
+    for (int i = 0; i < length; i++) {
+      if (!i = length - 1) {
+        result += 
+      }
+    }
 
   }
 
