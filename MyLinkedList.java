@@ -5,15 +5,21 @@ public class MyLinkedList{
   int length;
 
   public MyLinkedList(){
-
+    start = new Node();
+    end = new Node();
+    length = 0;
   }
 
   public boolean add(Integer value) {
-
+    Node currentEnd = end;
+    Node newEnd = new Node(null, currentEnd, value);
+    currentEnd.setNext(newEnd);
+    length++;
+    return true;
   }
 
   public int size() {
-
+    return length;
   }
 
   public String toString() {
