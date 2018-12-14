@@ -33,5 +33,9 @@ public class Node {
     return "" + data;
   }
 
+  public Integer getData() {
+    return data;
+  }
+
 
 }
