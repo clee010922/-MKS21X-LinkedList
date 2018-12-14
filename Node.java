@@ -9,6 +9,10 @@ public class Node {
     data = dataInteger;
   }
 
+  public Node() {
+    data = null;
+  }
+
   public Node next() {
     return next;
   }
