@@ -64,7 +64,14 @@ public class MyLinkedList{
   }
 
   public int indexOf(Integer value) {
-
+    int temp = -1;
+    Node current = start;
+    for (int i = 0; i < length; i++) {
+      if (current.getData() == value)
+        temp = i;
+      current = current.next();
+    }
+    return temp;
   }
 
   public void add(int index, Integer value) {
