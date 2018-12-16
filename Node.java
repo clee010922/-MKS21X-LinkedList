@@ -33,6 +33,12 @@ public class Node {
     return "" + data;
   }
 
+  public Integer setData(Integer i) {
+    Integer oldData = data;
+    data = i;
+    return oldData;
+  }
+
   public Integer getData() {
     return data;
   }
