@@ -23,17 +23,22 @@ public class MyLinkedList{
   }
 
   public String toString() {
-    String result = "[ ";
-    for (int i = 0; i < length; i++) {
-      if (!i = length - 1) {
-        result += 
-      }
+    String result = "{";
+    Node i = start;
+    while(i != end) {
+      result += i.getData() + ", ";
+      i = i.next();
     }
-
+    result += i.getData() + "}";
+    return result;
   }
 
-  private Node getNthNode() {
-
+  private Node getNthNode(int index) {
+    Node result = start;
+    for (int i = 0; i < index; i++) {
+      result = result.next();
+    }
+    return result;
   }
 
   public Integer get(int index) {
