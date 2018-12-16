@@ -42,15 +42,25 @@ public class MyLinkedList{
   }
 
   public Integer get(int index) {
-
+    return getNthNode(index).getData();
   }
 
   public Integer set(int index, Integer value) {
-
+    Node temp = getNthNode(index);
+    Integer oldData = temp.getData();
+    temp.setData(value);
+    return oldData;
   }
 
   public boolean contains(Integer value) {
-
+    boolean temp = false;
+    Node current = start;
+    for (int i = 0; i < length; i++) {
+      if (current.getData() == value)
+        temp = true;
+      current = current.next();
+    }
+    return temp;
   }
 
   public int indexOf(Integer value) {
