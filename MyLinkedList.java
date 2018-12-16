@@ -12,7 +12,7 @@ public class MyLinkedList{
 
   public boolean add(Integer value) {
     Node currentEnd = end;
-    Node newEnd = new Node(null, currentEnd, value);
+    Node newEnd = new Node(value, null, currentEnd);
     currentEnd.setNext(newEnd);
     length++;
     return true;
@@ -75,7 +75,23 @@ public class MyLinkedList{
   }
 
   public void add(int index, Integer value) {
-
+    Node n = new Node(value, null, null);
+    if (index == 0) {
+      n.setPrev(start);
+      n.setNext(end);
+      start.setNext(n);
+      end.setPrev(n);
+      length++;
+    }
+    else {
+      Node next = getNthNode(index);
+      Node prev = getNthNode(index - 1);
+      n.setPrev(prev);
+      n.setNext(next);
+      prev.setNext(n);
+      next.setPrev(n);
+      length++;
+    }
   }
 
   public Integer remove(int index) {
