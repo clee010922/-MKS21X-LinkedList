@@ -95,11 +95,37 @@ public class MyLinkedList{
   }
 
   public Integer remove(int index) {
-
+    Node n = getNthNode(index);
+    Node prev, next;
+    Integer oldData = n.getData();
+    if (index == 0) {
+      next = n.next();
+      next.setPrev(null);
+      start = next;
+      length--;
+    }
+    if (index == length-1) {
+      prev = n.prev();
+      prev.setNext(null);
+      end = prev;
+      length--;
+    }
+    else {
+      prev = getNthNode(index-1);
+      next = getNthNode(index+1);
+      prev.setNext(next);
+      next.setPrev(prev);
+      length--;
+    }
+    return oldData;
   }
 
   public boolean remove(Integer value) {
-
+    if (contains(value)) {
+      remove(indexOf(value));
+      return true;
+    }
+    return false;
   }
 
 
