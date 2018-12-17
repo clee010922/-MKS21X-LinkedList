@@ -143,4 +143,49 @@ public class MyLinkedList{
     return false;
   }
 
+  public void extend(MyLinkedList other) {
+    if (length == 0) {
+      end = other.end;
+      start = other.start;
+    }
+    else if (other.size() == 0) {
+      end = other.end;
+    }
+    else {
+      end.setNext(other.start);
+      other.start.setPrev(end);
+      end = other.end;	
+    }
+    length += other.size();
+    MyLinkedList temp = new MyLinkedList();
+    other = temp;
+  }
+    
+
+  public static void main(String[] args) {
+    MyLinkedList list1 = new MyLinkedList();
+    MyLinkedList list2 = new MyLinkedList();
+    MyLinkedList list3 = new MyLinkedList();
+    MyLinkedList list4 = new MyLinkedList();
+    for (int i = 0; i < 5; i++) {
+      list1.add(i);
+      list3.add(i);
+    }
+    for (int i = 5; i < 10; i++) {
+      list2.add(i);
+    }
+    list1.extend(list2);
+    list3.extend(list4);
+    list4.extend(list3);
+    System.out.println(list1);
+    System.out.println(list1.size());
+    System.out.println(list2);
+    System.out.println(list2.size());
+    System.out.println(list3);
+    System.out.println(list3.size());
+    System.out.println(list4);
+    System.out.println(list4.size());
+  }
+
+
 }
